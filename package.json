@@ -4,9 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "bash -c 'ts-node src/index.ts ${0} | xargs -I {} ffmpeg -i {}.m4a -i {}.m4v -c copy {}.mp4'",
+    "start1": "ffmpeg -i 260784651.m4a -i 260784651.m4v -c copy output.mp4" 
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.1",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  }
 }
